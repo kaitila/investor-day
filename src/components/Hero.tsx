@@ -4,7 +4,7 @@ import { CalendarIcon, MapPinIcon, UtensilsIcon } from './Icons'
 
 export default function Hero(): React.JSX.Element {
   return (
-    <section className="bg-gradient-to-b from-ice-blue to-white border-b border-border-subtle">
+    <section className="bg-white">
       <div className="max-w-[1280px] mx-auto px-16 max-md:px-5 pt-20 pb-24 max-md:pt-14 max-md:pb-16 text-center">
 
         {/* Badge */}
@@ -59,13 +59,13 @@ export default function Hero(): React.JSX.Element {
             href={EVENT.lumaUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-primary text-on-primary font-semibold rounded px-6 py-3 hover:bg-deep-navy transition-colors"
+            className="bg-primary text-on-primary font-semibold text-[17px] rounded px-6 py-3 hover:bg-deep-navy transition-colors"
           >
             Reserve my seat
           </a>
           <a
             href="#agenda"
-            className="font-semibold text-on-surface hover:text-on-surface-variant transition-colors"
+            className="font-semibold text-[17px] text-on-surface hover:text-on-surface-variant transition-colors"
           >
             See the agenda
           </a>

@@ -1,15 +1,13 @@
 import React from 'react'
 import { EVENT } from '../data/content'
+import IcebreakerLogo from './IcebreakerLogo'
 
 export default function Nav(): React.JSX.Element {
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b border-border-subtle">
+    <nav className="sticky top-0 z-50 bg-white">
       <div className="max-w-[1280px] mx-auto px-16 max-md:px-5 h-16 flex items-center justify-between">
-        <a
-          href="/"
-          className="font-sans font-semibold text-lg text-primary tracking-tight"
-        >
-          Icebreaker
+        <a href="/" className="text-primary flex items-center">
+          <IcebreakerLogo className="h-[18px] w-auto" />
         </a>
 
         <div className="flex items-center gap-8">
