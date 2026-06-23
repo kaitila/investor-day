@@ -1,6 +1,10 @@
 import React from 'react'
 import { AGENDA, type AgendaItem, type AgendaItemType } from '../data/content'
 import { EVENT } from '../data/content'
+import { useInView } from '../hooks/useInView'
+
+const T = 'transition-[opacity,transform] duration-700 ease-out'
+const ac = (inView: boolean) => (inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3')
 
 function chipClasses(type: AgendaItemType): string {
   switch (type) {
@@ -16,8 +20,13 @@ function chipClasses(type: AgendaItemType): string {
 }
 
 function AgendaRow({ item }: { item: AgendaItem }): React.JSX.Element {
+  const { ref, inView } = useInView(0.45)
+
   return (
-    <div className="grid grid-cols-[160px_1fr] max-md:grid-cols-1 border-t border-border-subtle py-8 max-md:py-6 gap-6 max-md:gap-3">
+    <div
+      ref={ref}
+      className={`${T} ${ac(inView)} grid grid-cols-[160px_1fr] max-md:grid-cols-1 border-t border-border-subtle py-8 max-md:py-6 gap-6 max-md:gap-3`}
+    >
       {/* Time */}
       <div className="font-mono text-sm text-on-surface-variant pt-0.5">{item.time}</div>
 
@@ -46,9 +55,17 @@ function AgendaRow({ item }: { item: AgendaItem }): React.JSX.Element {
                 key={i}
                 className="flex items-center gap-2.5 border border-border-subtle rounded bg-white px-3 py-2"
               >
-                <div className="w-7 h-7 rounded-full bg-deep-navy text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">
-                  {speaker.initials}
-                </div>
+                {speaker.photo ? (
+                  <img
+                    src={speaker.photo}
+                    alt={speaker.name}
+                    className="w-7 h-7 rounded-full object-cover flex-shrink-0"
+                  />
+                ) : (
+                  <div className="w-7 h-7 rounded-full bg-deep-navy text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">
+                    {speaker.initials}
+                  </div>
+                )}
                 <div>
                   <div className="text-xs font-semibold text-on-surface leading-tight">
                     {speaker.name}
@@ -69,24 +86,36 @@ function AgendaRow({ item }: { item: AgendaItem }): React.JSX.Element {
 }
 
 export default function Agenda(): React.JSX.Element {
+  const { ref: headerRef, inView: headerInView } = useInView(0.5)
+
   return (
     <section id="agenda" className="py-[120px] max-md:py-20 bg-white border-t border-border-subtle">
       <div className="max-w-[1280px] mx-auto px-16 max-md:px-5">
 
-        {/* Label */}
-        <span className="inline-block font-mono text-xs uppercase tracking-widest bg-surface-container text-on-surface-variant rounded px-2.5 py-1 mb-8">
-          The morning
-        </span>
+        {/* Header */}
+        <div ref={headerRef} className="mb-12">
+          <span
+            className={`${T} ${ac(headerInView)} inline-block font-mono text-xs uppercase tracking-widest bg-surface-container text-on-surface-variant rounded px-2.5 py-1 mb-8`}
+          >
+            The morning
+          </span>
 
-        <h2 className="font-sans font-bold text-[32px] max-md:text-2xl tracking-[-0.01em] text-on-surface mb-3">
-          Agenda
-        </h2>
+          <h2
+            className={`${T} ${ac(headerInView)} font-sans font-bold text-[32px] max-md:text-2xl tracking-[-0.01em] text-on-surface mb-3`}
+            style={{ transitionDelay: '100ms' }}
+          >
+            Agenda
+          </h2>
 
-        <p className="font-mono text-sm text-on-surface-variant mb-12">
-          {EVENT.date} · {EVENT.venue}, Helsinki · Times in {EVENT.timezone}
-        </p>
+          <p
+            className={`${T} ${ac(headerInView)} font-mono text-sm text-on-surface-variant`}
+            style={{ transitionDelay: '200ms' }}
+          >
+            {EVENT.date} · {EVENT.venue}, Helsinki · Times in {EVENT.timezone}
+          </p>
+        </div>
 
-        {/* Timeline */}
+        {/* Timeline — each row triggers its own animation */}
         <div>
           {AGENDA.map((item, i) => (
             <AgendaRow key={i} item={item} />

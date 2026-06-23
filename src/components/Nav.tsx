@@ -6,7 +6,10 @@ export default function Nav(): React.JSX.Element {
   return (
     <nav className="bg-white">
       <div className="max-w-[1640px] mx-auto px-12.5 max-md:px-5 pt-12.5 flex items-center justify-between">
-        <a href="/" className="text-primary flex items-center">
+        <a
+          href="https://icebreaker.vc"
+          className="text-primary flex items-center"
+        >
           <IcebreakerLogo className="h-8.25 w-auto" />
         </a>
 

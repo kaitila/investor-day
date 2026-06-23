@@ -59,6 +59,27 @@ export function UtensilsIcon({ className = '', size = 16 }: IconProps): React.JS
   )
 }
 
+export function ExternalLinkIcon({ className = '', size = 12 }: IconProps): React.JSX.Element {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 12 12"
+      fill="none"
+      aria-hidden="true"
+      className={className}
+    >
+      <path
+        d="M2.5 9.5L9.5 2.5M9.5 2.5H4.5M9.5 2.5V7.5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
 export function TicketIcon({ className = '', size = 16 }: IconProps): React.JSX.Element {
   return (
     <svg

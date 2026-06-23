@@ -1,45 +1,67 @@
 import React from 'react'
+import IcebreakerLogo from './IcebreakerLogo'
 import { EVENT } from '../data/content'
+import eifLogo from '../assets/eif.png'
 
 export default function Footer(): React.JSX.Element {
   return (
     <footer className="bg-white border-t border-border-subtle">
-      <div className="max-w-[1280px] mx-auto px-16 max-md:px-5 py-10 flex items-center justify-between flex-wrap gap-6">
+      <div className="max-w-[1280px] mx-auto px-16 max-md:px-5 py-10 space-y-8">
 
-        {/* Left */}
-        <div>
-          <div className="font-sans font-semibold text-base text-primary mb-1">Icebreaker</div>
-          <div className="text-sm text-on-surface-variant">
-            Supporting teams from Idea to Seed and beyond since 2017.
+        <div className="flex items-center justify-between flex-wrap gap-4">
+          <IcebreakerLogo className="h-5 text-primary" />
+          <div className="flex items-center gap-6">
+            <a
+              href={EVENT.linkedinUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-on-surface-variant hover:text-on-surface transition-colors"
+            >
+              LinkedIn
+            </a>
+            <a
+              href={EVENT.twitterUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-on-surface-variant hover:text-on-surface transition-colors"
+            >
+              Twitter
+            </a>
           </div>
         </div>
 
-        {/* Right */}
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-6 flex-wrap">
           <a
-            href={EVENT.icebreakerUrl}
+            href={EVENT.privacyPolicyUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-on-surface-variant hover:text-on-surface transition-colors"
           >
-            icebreaker.vc
+            Privacy Policy
           </a>
           <a
-            href={EVENT.linkedinUrl}
+            href={EVENT.codeOfConductUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-on-surface-variant hover:text-on-surface transition-colors"
           >
-            LinkedIn
+            Code of Conduct
           </a>
           <a
-            href={EVENT.lumaUrl}
+            href={EVENT.esgPolicyUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-semibold text-on-surface hover:text-deep-navy transition-colors"
+            className="text-sm text-on-surface-variant hover:text-on-surface transition-colors"
           >
-            Register
+            ESG Policy
           </a>
+        </div>
+
+        <div className="flex items-start gap-6 flex-wrap">
+          <img src={eifLogo} alt="European Investment Fund" className="h-12 w-auto flex-shrink-0" />
+          <p className="text-xs text-on-surface-variant max-w-2xl leading-relaxed">
+            {EVENT.euDisclosure}
+          </p>
         </div>
 
       </div>
