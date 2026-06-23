@@ -1,32 +1,32 @@
-import React from 'react'
-import { EVENT } from '../data/content'
-import IcebreakerLogo from './IcebreakerLogo'
+import React from "react";
+import { EVENT } from "../data/content";
+import IcebreakerLogo from "./IcebreakerLogo";
 
 export default function Nav(): React.JSX.Element {
   return (
-    <nav className="sticky top-0 z-50 bg-white">
-      <div className="max-w-[1280px] mx-auto px-[50px] max-md:px-5 py-[50px] flex items-center justify-between">
+    <nav className="bg-white">
+      <div className="max-w-[1640px] mx-auto px-12.5 max-md:px-5 pt-12.5 flex items-center justify-between">
         <a href="/" className="text-primary flex items-center">
-          <IcebreakerLogo className="h-[33px] w-auto" />
+          <IcebreakerLogo className="h-8.25 w-auto" />
         </a>
 
         <div className="flex items-center gap-8">
           <div className="hidden md:flex items-center gap-7">
             <a
               href="#why-attend"
-              className="text-[17px] leading-[20px] py-[18px] text-on-surface-variant hover:text-on-surface transition-colors"
+              className="text-[17px] leading-5 py-4.5 text-on-surface-variant hover:text-on-surface transition-colors"
             >
               Why attend
             </a>
             <a
               href="#agenda"
-              className="text-[17px] leading-[20px] py-[18px] text-on-surface-variant hover:text-on-surface transition-colors"
+              className="text-[17px] leading-5 py-4.5 text-on-surface-variant hover:text-on-surface transition-colors"
             >
               Agenda
             </a>
             <a
               href="#speakers"
-              className="text-[17px] leading-[20px] py-[18px] text-on-surface-variant hover:text-on-surface transition-colors"
+              className="text-[17px] leading-5 py-4.5 text-on-surface-variant hover:text-on-surface transition-colors"
             >
               Speakers
             </a>
@@ -43,5 +43,5 @@ export default function Nav(): React.JSX.Element {
         </div>
       </div>
     </nav>
-  )
+  );
 }
