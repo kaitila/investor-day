@@ -5,8 +5,8 @@ import IcebreakerLogo from './IcebreakerLogo'
 export default function Nav(): React.JSX.Element {
   return (
     <nav className="sticky top-0 z-50 bg-white">
-      <div className="max-w-[1280px] mx-auto px-[50px] max-md:px-5 flex items-center justify-between">
-        <a href="/" className="text-primary flex items-center py-[18px]">
+      <div className="max-w-[1280px] mx-auto px-[50px] max-md:px-5 py-[50px] flex items-center justify-between">
+        <a href="/" className="text-primary flex items-center">
           <IcebreakerLogo className="h-[33px] w-auto" />
         </a>
 
