@@ -1,5 +1,6 @@
 import React from 'react'
 import { EVENT } from '../data/content'
+import { CalendarIcon, MapPinIcon, TicketIcon } from './Icons'
 
 export default function Register(): React.JSX.Element {
   return (
@@ -24,17 +25,17 @@ export default function Register(): React.JSX.Element {
 
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <span className="text-base leading-none">📅</span>
+                <CalendarIcon className="text-white/50 flex-shrink-0" />
                 <span className="text-white/80 text-sm">
                   {EVENT.dateLong} · {EVENT.time}
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <span className="text-base leading-none">📍</span>
+                <MapPinIcon className="text-white/50 flex-shrink-0" />
                 <span className="text-white/80 text-sm">{EVENT.venue}, Helsinki</span>
               </div>
               <div className="flex items-center gap-3">
-                <span className="text-base leading-none">🎟</span>
+                <TicketIcon className="text-white/50 flex-shrink-0" />
                 <span className="text-white/80 text-sm">
                   Free to attend · Invitation & registration required
                 </span>

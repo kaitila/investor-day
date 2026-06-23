@@ -1,10 +1,11 @@
 import React from 'react'
 import { EVENT } from '../data/content'
+import { CalendarIcon, MapPinIcon, UtensilsIcon } from './Icons'
 
 export default function Hero(): React.JSX.Element {
   return (
     <section className="bg-gradient-to-b from-ice-blue to-white border-b border-border-subtle">
-      <div className="max-w-[1280px] mx-auto px-16 max-md:px-5 pt-20 pb-24 max-md:pt-14 max-md:pb-16">
+      <div className="max-w-[1280px] mx-auto px-16 max-md:px-5 pt-20 pb-24 max-md:pt-14 max-md:pb-16 text-center">
 
         {/* Badge */}
         <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest bg-white border border-border-subtle rounded px-3 py-1.5 text-on-surface-variant mb-10">
@@ -13,23 +14,23 @@ export default function Hero(): React.JSX.Element {
         </div>
 
         {/* Headline */}
-        <h1 className="font-sans font-bold leading-none tracking-[-0.02em] mb-6">
-          <span className="block text-primary text-[64px] max-md:text-[40px]">Icebreaker</span>
-          <span className="block text-deep-navy text-[64px] max-md:text-[40px]">Investor Day 2026</span>
+        <h1 className="font-sans font-semibold leading-none tracking-[-0.02em] mb-6">
+          <span className="block text-primary text-[44px] max-md:text-[28px]">Icebreaker</span>
+          <span className="block text-deep-navy text-[44px] max-md:text-[28px]">Investor Day 2026</span>
         </h1>
 
         {/* Body */}
-        <p className="text-on-surface-variant text-lg max-md:text-base leading-relaxed max-w-[560px] mb-10">
+        <p className="text-on-surface-variant text-lg max-md:text-base leading-relaxed max-w-[560px] mx-auto mb-10">
           A focused half-day with the Icebreaker team, our founders and LPs, and a few special
           guests — candid panels on AI automation and European growth-stage funding, straight-talk
           updates from our fastest-growing companies, and plenty of time to connect.
         </p>
 
         {/* Event meta */}
-        <div className="flex flex-wrap divide-x divide-border-subtle border border-border-subtle rounded bg-white max-w-max mb-10">
+        <div className="inline-flex flex-wrap divide-x divide-border-subtle border border-border-subtle rounded bg-white mb-10">
           <div className="flex items-center gap-3 px-5 py-3.5 max-md:px-4 max-md:py-3">
-            <span className="text-base leading-none">📅</span>
-            <div>
+            <CalendarIcon className="text-on-surface-variant flex-shrink-0" />
+            <div className="text-left">
               <div className="text-sm font-semibold text-on-surface">{EVENT.date}</div>
               <div className="font-mono text-xs text-on-surface-variant mt-0.5">
                 {EVENT.time} ({EVENT.timezone})
@@ -37,15 +38,15 @@ export default function Hero(): React.JSX.Element {
             </div>
           </div>
           <div className="flex items-center gap-3 px-5 py-3.5 max-md:px-4 max-md:py-3">
-            <span className="text-base leading-none">📍</span>
-            <div>
+            <MapPinIcon className="text-on-surface-variant flex-shrink-0" />
+            <div className="text-left">
               <div className="text-sm font-semibold text-on-surface">{EVENT.venue}</div>
               <div className="font-mono text-xs text-on-surface-variant mt-0.5">{EVENT.address}</div>
             </div>
           </div>
           <div className="flex items-center gap-3 px-5 py-3.5 max-md:px-4 max-md:py-3">
-            <span className="text-base leading-none">🍽</span>
-            <div>
+            <UtensilsIcon className="text-on-surface-variant flex-shrink-0" />
+            <div className="text-left">
               <div className="text-sm font-semibold text-on-surface">Breakfast & lunch</div>
               <div className="font-mono text-xs text-on-surface-variant mt-0.5">Plus plenty of mingling</div>
             </div>
@@ -53,7 +54,7 @@ export default function Hero(): React.JSX.Element {
         </div>
 
         {/* CTAs */}
-        <div className="flex items-center flex-wrap gap-4">
+        <div className="flex items-center justify-center flex-wrap gap-4">
           <a
             href={EVENT.lumaUrl}
             target="_blank"
@@ -72,6 +73,7 @@ export default function Hero(): React.JSX.Element {
             Free to attend · Registration required
           </span>
         </div>
+
       </div>
     </section>
   )

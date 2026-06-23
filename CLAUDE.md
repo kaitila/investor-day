@@ -76,6 +76,8 @@ Full setup instructions and file structure are in `PRD.md`. Always read `PRD.md`
 ### Design system
 Always consult `DESIGN.md` before writing any CSS. Key Tailwind rules:
 - **Fonts:** `font-sans` (Hanken Grotesk) for all body/headings. `font-mono` (JetBrains Mono) **only** for chips, labels, timestamps.
+- **H1 (hero display):** `font-semibold text-[44px] max-md:text-[28px]` — weight 600, not 700. H2 section headings stay at `font-bold text-[32px]`.
+- **Icons:** Use inline SVG from `src/components/Icons.tsx` — no emojis anywhere in the UI.
 - **Primary color:** Black (`#000000`). The reference screenshots use blue — translate all blue to black or `deep-navy`.
 - **`deep-navy` (`#0A1128`):** Dark section backgrounds (Register section), avatar circles, hero H1 accent line.
 - **Cards:** `border border-border-subtle bg-white` — no `shadow-*` classes.
