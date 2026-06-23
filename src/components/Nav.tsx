@@ -14,19 +14,19 @@ export default function Nav(): React.JSX.Element {
           <div className="hidden md:flex items-center gap-7">
             <a
               href="#why-attend"
-              className="text-sm text-on-surface-variant hover:text-on-surface transition-colors"
+              className="text-[17px] text-on-surface-variant hover:text-on-surface transition-colors"
             >
               Why attend
             </a>
             <a
               href="#agenda"
-              className="text-sm text-on-surface-variant hover:text-on-surface transition-colors"
+              className="text-[17px] text-on-surface-variant hover:text-on-surface transition-colors"
             >
               Agenda
             </a>
             <a
               href="#speakers"
-              className="text-sm text-on-surface-variant hover:text-on-surface transition-colors"
+              className="text-[17px] text-on-surface-variant hover:text-on-surface transition-colors"
             >
               Speakers
             </a>
