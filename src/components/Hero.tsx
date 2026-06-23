@@ -15,8 +15,8 @@ export default function Hero(): React.JSX.Element {
 
         {/* Headline */}
         <h1 className="font-sans font-semibold leading-none tracking-[-0.02em] mb-6">
-          <span className="block text-primary text-[44px] max-md:text-[28px]">Icebreaker</span>
-          <span className="block text-deep-navy text-[44px] max-md:text-[28px]">Investor Day 2026</span>
+          <span className="block text-primary text-[64px] max-md:text-[40px]">Icebreaker</span>
+          <span className="block text-deep-navy text-[64px] max-md:text-[40px]">Investor Day 2026</span>
         </h1>
 
         {/* Body */}

@@ -223,7 +223,7 @@ Follow `DESIGN.md` exactly. Key rules for implementation:
 
 ### 2. Hero
 - Badge chip: `"Invite-only · Limited seats"` (JetBrains Mono, uppercase)
-- H1 line 1: `"Icebreaker"` — `text-primary` (black), `font-semibold text-[44px] max-md:text-[28px]`
+- H1 line 1: `"Icebreaker"` — `text-primary` (black), `font-semibold text-[64px] max-md:text-[40px]`
 - H1 line 2: `"Investor Day 2026"` — `text-deep-navy`, same size/weight
 - Body copy: "A focused half-day with the Icebreaker team, our founders and LPs, and a few special guests — candid panels on AI automation and European growth-stage funding, straight-talk updates from our fastest-growing companies, and plenty of time to connect."
 - 3 event meta items (icon + label):

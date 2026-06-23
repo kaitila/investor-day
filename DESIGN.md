@@ -55,15 +55,15 @@ colors:
 typography:
   display-lg:
     fontFamily: Hanken Grotesk
-    fontSize: 44px
+    fontSize: 64px
     fontWeight: '600'
-    lineHeight: 52px
+    lineHeight: 72px
     letterSpacing: -0.02em
   display-lg-mobile:
     fontFamily: Hanken Grotesk
-    fontSize: 28px
+    fontSize: 40px
     fontWeight: '600'
-    lineHeight: 36px
+    lineHeight: 48px
     letterSpacing: -0.02em
   headline-lg:
     fontFamily: Hanken Grotesk
