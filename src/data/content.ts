@@ -100,6 +100,36 @@ export const SPEAKERS: Speaker[] = [
     photo: michaelDimelow,
     logo: logoMoltenVentures,
   },
+  {
+    initials: "MA",
+    name: "Mika Aalto",
+    role: "CEO & Co-Founder",
+    org: "Hoxhunt",
+    bio: "Hoxhunt has the world's best product and a well-oiled US-based sales machine closing new Fortune 500 companies every quarter. As a result, the company has grown over 50% annually for several years without burning cash. It won't be long before they graduate to the €100M ARR league.",
+    linkedinUrl: "https://www.linkedin.com/in/mpaalto/",
+    photo: mikaAalto,
+    logo: logoHoxhunt,
+  },
+  {
+    initials: "SS",
+    name: "Sethu Suvanam",
+    role: "CEO & Co-Founder",
+    org: "ReOrbit",
+    bio: "ReOrbit is one of the most interesting space tech companies in Europe. It has closed its first major B2G deals and is about to surpass the €500M annual sales threshold.",
+    linkedinUrl: "https://www.linkedin.com/in/sethu-saveda-suvanam-426a9421/",
+    photo: sethuSuvanam,
+    logo: logoReOrbit,
+  },
+  {
+    initials: "MS",
+    name: "Marko Saul",
+    role: "CEO & Co-Founder",
+    org: "Crewpoint",
+    bio: "Crewpoint is a great example of a modern AI-startup capable of running its core operations a lot more efficiently than the incumbents. The company has started to grow its revenue through acquisitions and is able to improve the profitability of the acquired businesses many times over compared to traditional buy-and-build roll-ups.",
+    linkedinUrl: "https://www.linkedin.com/in/markosaul/",
+    photo: markoSaul,
+    logo: logoCrewpoint,
+  },
 ];
 
 export type AgendaItemType =
@@ -276,35 +306,3 @@ export const AGENDA: AgendaItem[] = [
   },
 ];
 
-export const CEO_SPEAKERS: Speaker[] = [
-  {
-    initials: "MA",
-    name: "Mika Aalto",
-    role: "CEO & Co-Founder",
-    org: "Hoxhunt",
-    bio: "Co-founded Hoxhunt on the premise that most breaches start with a human, not a vulnerability. Before that, ran development and infrastructure for business-critical ERP software at Haahtela, where he sat on the executive board.",
-    linkedinUrl: "https://www.linkedin.com/in/mpaalto/",
-    photo: mikaAalto,
-    logo: logoHoxhunt,
-  },
-  {
-    initials: "SS",
-    name: "Sethu Suvanam",
-    role: "CEO & Co-Founder",
-    org: "ReOrbit",
-    bio: "Built ReOrbit on 12+ years of deep space research and a PhD in radiation-hardened semiconductors from KTH. The company recently signed a €150M GEO satellite acquisition agreement with SLI.",
-    linkedinUrl: "https://www.linkedin.com/in/sethu-saveda-suvanam-426a9421/",
-    photo: sethuSuvanam,
-    logo: logoReOrbit,
-  },
-  {
-    initials: "MS",
-    name: "Marko Saul",
-    role: "CEO & Co-Founder",
-    org: "Crewpoint",
-    bio: "Former Head of Finance at Veriff (€1.5B AI identity platform) and CFO at Fairown. Has raised over €20M and scaled B2B sales organisations.",
-    linkedinUrl: "https://www.linkedin.com/in/markosaul/",
-    photo: markoSaul,
-    logo: logoCrewpoint,
-  },
-];
