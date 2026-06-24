@@ -71,6 +71,11 @@ export default function WhyAttend(): React.JSX.Element {
 
         {/* Stats + footnote */}
         <div ref={statsRef}>
+          <p
+            className={`${T} ${ac(statsInView)} text-xs font-mono uppercase tracking-widest text-on-surface-variant mb-3`}
+          >
+            Icebreaker Fund I vs. the average benchmark fund*
+          </p>
           <div
             className={`${T} ${ac(statsInView)} grid grid-cols-3 max-md:grid-cols-1 border border-border-subtle rounded bg-white divide-x max-md:divide-x-0 max-md:divide-y divide-border-subtle mb-4`}
           >

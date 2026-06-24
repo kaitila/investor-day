@@ -1,14 +1,18 @@
-import markusHav from "../assets/markus-hav.png";
-import emilKvarnhammar from "../assets/emil-kvarnhammar.png";
-import ainoBergius from "../assets/aino-bergius.png";
+import markusHav from "../assets/markus-hav.jpg";
+import emilKvarnhammar from "../assets/emil-kvarnhammar.jpg";
+import ainoBergius from "../assets/aino-bergius.jpg";
 import ossiTiainen from "../assets/ossi-tiainen.jpg";
 import michaelDimelow from "../assets/michael-dimelow.jpg";
-import aleksiPartanen from "../assets/aleksi-partanen.png";
+import aleksiPartanen from "../assets/aleksi-partanen.jpg";
+import lasseLehtinen from "../assets/lasse-lehtinen.jpg";
 import rikuSeppala from "../assets/riku-seppälä.jpg";
 import mikaAalto from "../assets/mika-aalto.jpg";
 import sethuSuvanam from "../assets/sethu-suvanam.jpg";
 import markoSaul from "../assets/marko-saul.jpg";
 
+import logoHoxhunt from "../assets/hoxhunt.jpg";
+import logoReOrbit from "../assets/reorbit.jpg";
+import logoCrewpoint from "../assets/crewpoint.jpg";
 import logoPostScriptum from "../assets/postsrciptum.jpg";
 import logoOplane from "../assets/oplane.jpg";
 import logoLovable from "../assets/lovable.jpg";
@@ -111,6 +115,7 @@ export interface AgendaSpeaker {
   name: string;
   role: string;
   photo?: string;
+  logo?: string;
 }
 
 export interface AgendaItem {
@@ -135,8 +140,15 @@ export const AGENDA: AgendaItem[] = [
     type: "update",
     typeLabel: "LIVE UPDATE",
     title: "Icebreaker Updates",
-    description:
-      "Where the funds stand and what's ahead — with Lasse Lehtinen, GP @ Icebreaker.",
+    description: "Where the funds stand and what's ahead.",
+    speakers: [
+      {
+        initials: "LL",
+        name: "Lasse Lehtinen",
+        role: "GP, Icebreaker",
+        photo: lasseLehtinen,
+      },
+    ],
   },
   {
     time: "9:45–10:30",
@@ -167,7 +179,7 @@ export const AGENDA: AgendaItem[] = [
       {
         initials: "RS",
         name: "Riku Seppälä",
-        role: "GP, Icebreaker",
+        role: "Moderator · GP, Icebreaker",
         photo: rikuSeppala,
       },
     ],
@@ -212,21 +224,48 @@ export const AGENDA: AgendaItem[] = [
     type: "ceo",
     typeLabel: "CEO UPDATE · FUND I",
     title: "Fund I's fastest-growing company",
-    description: "Mika Aalto, CEO & Co-Founder of Hoxhunt.",
+    description: "",
+    speakers: [
+      {
+        initials: "MA",
+        name: "Mika Aalto",
+        role: "CEO & Co-Founder, Hoxhunt",
+        photo: mikaAalto,
+        logo: logoHoxhunt,
+      },
+    ],
   },
   {
     time: "11:40–11:50",
     type: "ceo",
     typeLabel: "CEO UPDATE · FUND II",
     title: "Fund II's fastest-growing company",
-    description: "Sethu Suvanam, CEO & Co-Founder of ReOrbit.",
+    description: "",
+    speakers: [
+      {
+        initials: "SS",
+        name: "Sethu Suvanam",
+        role: "CEO & Co-Founder, ReOrbit",
+        photo: sethuSuvanam,
+        logo: logoReOrbit,
+      },
+    ],
   },
   {
     time: "11:50–12:00",
     type: "ceo",
     typeLabel: "CEO UPDATE · FUND III",
     title: "Fund III's fastest-growing company",
-    description: "Marko Saul, CEO & Co-Founder of Crewpoint.",
+    description: "",
+    speakers: [
+      {
+        initials: "MS",
+        name: "Marko Saul",
+        role: "CEO & Co-Founder, Crewpoint",
+        photo: markoSaul,
+        logo: logoCrewpoint,
+      },
+    ],
   },
   {
     time: "12:00–13:00",
@@ -237,20 +276,35 @@ export const AGENDA: AgendaItem[] = [
   },
 ];
 
-export interface AttributionPerson {
-  initials: string;
-  name: string;
-  label: string;
-  photo?: string;
-}
-
-export const PANEL_MODERATORS: AttributionPerson[] = [
-  { initials: "RS", name: "Riku Seppälä", label: "GP, Icebreaker", photo: rikuSeppala },
-  { initials: "AP", name: "Aleksi Partanen", label: "GP, Icebreaker", photo: aleksiPartanen },
-];
-
-export const CEO_UPDATERS: AttributionPerson[] = [
-  { initials: "MA", name: "Mika Aalto", label: "Hoxhunt", photo: mikaAalto },
-  { initials: "SS", name: "Sethu Suvanam", label: "ReOrbit", photo: sethuSuvanam },
-  { initials: "MS", name: "Marko Saul", label: "Crewpoint", photo: markoSaul },
+export const CEO_SPEAKERS: Speaker[] = [
+  {
+    initials: "MA",
+    name: "Mika Aalto",
+    role: "CEO & Co-Founder",
+    org: "Hoxhunt",
+    bio: "Co-founded Hoxhunt on the premise that most breaches start with a human, not a vulnerability. Before that, ran development and infrastructure for business-critical ERP software at Haahtela, where he sat on the executive board.",
+    linkedinUrl: "https://www.linkedin.com/in/mpaalto/",
+    photo: mikaAalto,
+    logo: logoHoxhunt,
+  },
+  {
+    initials: "SS",
+    name: "Sethu Suvanam",
+    role: "CEO & Co-Founder",
+    org: "ReOrbit",
+    bio: "Built ReOrbit on 12+ years of deep space research and a PhD in radiation-hardened semiconductors from KTH. The company recently signed a €150M GEO satellite acquisition agreement with SLI.",
+    linkedinUrl: "https://www.linkedin.com/in/sethu-saveda-suvanam-426a9421/",
+    photo: sethuSuvanam,
+    logo: logoReOrbit,
+  },
+  {
+    initials: "MS",
+    name: "Marko Saul",
+    role: "CEO & Co-Founder",
+    org: "Crewpoint",
+    bio: "Former Head of Finance at Veriff (€1.5B AI identity platform) and CFO at Fairown. Has raised over €20M and scaled B2B sales organisations.",
+    linkedinUrl: "https://www.linkedin.com/in/markosaul/",
+    photo: markoSaul,
+    logo: logoCrewpoint,
+  },
 ];

@@ -76,6 +76,15 @@ function AgendaRow({ item }: { item: AgendaItem }): React.JSX.Element {
                     </div>
                   )}
                 </div>
+                {speaker.logo && (
+                  <div className="ml-1 pl-2.5 border-l border-border-subtle flex items-center">
+                    <img
+                      src={speaker.logo}
+                      alt=""
+                      className="h-5 w-auto max-w-[72px] object-contain"
+                    />
+                  </div>
+                )}
               </div>
             ))}
           </div>

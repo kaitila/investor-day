@@ -69,7 +69,7 @@ export default function Hero(): React.JSX.Element {
           className={`inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest bg-white border border-border-subtle rounded px-3 py-1.5 text-on-surface-variant mb-10${prefersReduced ? "" : " animate-fade-up"}`}
         >
           <span className="w-1.5 h-1.5 rounded-full bg-status-success shrink-0" />
-          Invite-only · Limited seats
+          Invite-only
         </div>
 
         {/* Headline — single animation curve across both lines */}
@@ -145,7 +145,7 @@ export default function Hero(): React.JSX.Element {
             rel="noopener noreferrer"
             className="bg-primary text-on-primary font-semibold rounded px-6 py-3 hover:bg-deep-navy transition-colors"
           >
-            Reserve my seat
+            Sign up
           </a>
           <a
             href="#agenda"

@@ -24,11 +24,6 @@ export default function Register(): React.JSX.Element {
               Register for Investor Day 2026
             </h2>
 
-            <p className="text-white/70 text-lg max-md:text-base leading-relaxed mb-10">
-              Seats are limited and allocated on a first-come basis. Register via lu.ma to secure
-              your spot.
-            </p>
-
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <CalendarIcon className="text-white/50 flex-shrink-0" />
@@ -62,18 +57,13 @@ export default function Register(): React.JSX.Element {
             className={`${T} ${ac(inView)} bg-white rounded-lg p-8 max-md:p-6`}
             style={{ transitionDelay: '150ms' }}
           >
-            <h3 className="font-sans font-bold text-2xl text-on-surface mb-2">
-              Reserve your spot
-            </h3>
-            <p className="text-on-surface-variant text-sm mb-8">Takes 30 seconds.</p>
-
             <a
               href={EVENT.lumaUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full text-center bg-primary text-on-primary font-semibold rounded py-3.5 hover:bg-deep-navy transition-colors mb-4"
             >
-              Reserve my seat on lu.ma
+              Sign up
             </a>
 
             <p className="text-xs text-on-surface-variant text-center leading-relaxed">

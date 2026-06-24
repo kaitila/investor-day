@@ -1,7 +1,6 @@
 import React from 'react'
 import IcebreakerLogo from './IcebreakerLogo'
 import { EVENT } from '../data/content'
-import eifLogo from '../assets/eif.png'
 
 export default function Footer(): React.JSX.Element {
   return (
@@ -57,12 +56,7 @@ export default function Footer(): React.JSX.Element {
           </a>
         </div>
 
-        <div className="flex items-start gap-6 flex-wrap">
-          <img src={eifLogo} alt="European Investment Fund" className="h-12 w-auto flex-shrink-0" />
-          <p className="text-xs text-on-surface-variant max-w-2xl leading-relaxed">
-            {EVENT.euDisclosure}
-          </p>
-        </div>
+        <div className="h-8" />
 
       </div>
     </footer>
