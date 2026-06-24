@@ -10,7 +10,7 @@ export default function Nav(): React.JSX.Element {
           href="https://icebreaker.vc"
           className="text-primary flex items-center"
         >
-          <IcebreakerLogo className="h-8.25 w-auto" />
+          <IcebreakerLogo className="h-6 md:h-8.25 w-auto" />
         </a>
 
         <div className="flex items-center gap-8">

@@ -5,17 +5,17 @@ import { CalendarIcon, MapPinIcon, UtensilsIcon } from "./Icons";
 const H1_LINE1 = "Icebreaker";
 const H1_LINE2 = "Investor Day 2026";
 const PARA =
-  "A focused half-day with the Icebreaker team, our founders and LPs, and a few special guests — candid panels on AI automation and European growth-stage funding, straight-talk updates from our fastest-growing companies, and plenty of time to connect.";
+  "Welcome to a focused half-day with the Icebreaker team, our founders and LPs, and a few special guests. Expect candid panels on AI automation and European growth-stage funding, straight-talk updates from our fastest-growing companies, and plenty of room to connect, compare notes, and find the next conversation worth having.";
 
 const H1_FULL = H1_LINE1 + H1_LINE2; // single string for one continuous curve
 
 // Timing constants (ms from mount)
 const H1_START = 150;
-const H1_DUR = 1400; // easeInQuad across all 27 chars as one unit
-const P_START = 1750;
-const P_DUR = 2000;
-const META_AT = 3950;
-const CTA_AT = 4200;
+const H1_DUR = 800; // easeInQuad across all 27 chars as one unit
+const P_START = 1000;
+const P_DUR = 1200;
+const META_AT = 2300;
+const CTA_AT = 2500;
 
 // Characters accelerate at the start and decelerate towards the end.
 // time(i) = duration * easeInQuad(i/n) → intervals grow larger near the end.
@@ -27,13 +27,13 @@ function scheduleTypewriter(
   text: string,
   duration: number,
   startDelay: number,
-  setter: React.Dispatch<React.SetStateAction<number>>
+  setter: React.Dispatch<React.SetStateAction<number>>,
 ): ReturnType<typeof setTimeout>[] {
   return Array.from({ length: text.length }, (_, idx) => {
     const i = idx + 1;
     return setTimeout(
       () => setter(i),
-      startDelay + duration * easeInQuad(i / text.length)
+      startDelay + duration * easeInQuad(i / text.length),
     );
   });
 }
@@ -78,13 +78,18 @@ export default function Hero(): React.JSX.Element {
             {H1_FULL.slice(0, Math.min(h1Count, H1_LINE1.length))}
           </span>
           <span className="block text-deep-navy text-[64px] max-md:text-[40px] min-h-[1em]">
-            {h1Count > H1_LINE1.length ? H1_FULL.slice(H1_LINE1.length, h1Count) : ""}
+            {h1Count > H1_LINE1.length
+              ? H1_FULL.slice(H1_LINE1.length, h1Count)
+              : ""}
           </span>
         </h1>
 
         {/* Body — invisible spacer reserves full height; typed text overlays it */}
         <div className="relative max-w-140 mx-auto mb-10">
-          <p className="text-on-surface-variant text-lg max-md:text-base leading-relaxed invisible select-none" aria-hidden="true">
+          <p
+            className="text-on-surface-variant text-lg max-md:text-base leading-relaxed invisible select-none"
+            aria-hidden="true"
+          >
             {PARA}
           </p>
           <p className="text-on-surface-variant text-lg max-md:text-base leading-relaxed absolute inset-0">
@@ -94,13 +99,13 @@ export default function Hero(): React.JSX.Element {
 
         {/* Event meta */}
         <div
-          className={`inline-flex flex-wrap divide-x divide-border-subtle border border-border-subtle rounded bg-white mb-10 transition-all duration-700 ${
+          className={`inline-flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-border-subtle border border-border-subtle rounded bg-white mb-10 text-left transition-all duration-700 max-md:w-full ${
             showMeta ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
           }`}
         >
-          <div className="flex items-center gap-3 px-5 py-3.5 max-md:px-4 max-md:py-3">
+          <div className="flex items-center gap-3 px-5 py-3.5">
             <CalendarIcon className="text-on-surface-variant shrink-0" />
-            <div className="text-left">
+            <div>
               <div className="text-sm font-semibold text-on-surface">
                 {EVENT.date}
               </div>
@@ -109,9 +114,9 @@ export default function Hero(): React.JSX.Element {
               </div>
             </div>
           </div>
-          <div className="flex items-center gap-3 px-5 py-3.5 max-md:px-4 max-md:py-3">
+          <div className="flex items-center gap-3 px-5 py-3.5">
             <MapPinIcon className="text-on-surface-variant shrink-0" />
-            <div className="text-left">
+            <div>
               <div className="text-sm font-semibold text-on-surface">
                 {EVENT.venue}
               </div>
@@ -120,9 +125,9 @@ export default function Hero(): React.JSX.Element {
               </div>
             </div>
           </div>
-          <div className="flex items-center gap-3 px-5 py-3.5 max-md:px-4 max-md:py-3">
+          <div className="flex items-center gap-3 px-5 py-3.5">
             <UtensilsIcon className="text-on-surface-variant shrink-0" />
-            <div className="text-left">
+            <div>
               <div className="text-sm font-semibold text-on-surface">
                 Breakfast & lunch
               </div>

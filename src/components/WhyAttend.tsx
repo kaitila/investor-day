@@ -2,9 +2,9 @@ import React from 'react'
 import { useInView } from '../hooks/useInView'
 
 const STATS = [
-  { value: '7x', label: 'LP capital actually returned to LPs' },
-  { value: '3x', label: 'Annualised rate of return' },
-  { value: '2x', label: 'Total value to paid-in' },
+  { value: '7x', metric: 'DPI' },
+  { value: '3x', metric: 'IRR' },
+  { value: '2x', metric: 'TVPI' },
 ] as const
 
 const CARDS = [
@@ -85,10 +85,10 @@ export default function WhyAttend(): React.JSX.Element {
                 className={`${T} ${ac(statsInView)} px-8 py-8 max-md:px-6 max-md:py-6`}
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <div className="font-mono font-bold text-[56px] max-md:text-[40px] leading-none text-deep-navy tracking-tight mb-3">
-                  {stat.value}
+                <div className="flex items-baseline gap-3">
+                  <span className="font-mono font-bold text-[56px] max-md:text-[40px] leading-none tracking-tight text-deep-navy">{stat.value}</span>
+                  <span className="font-mono text-base uppercase tracking-widest text-on-surface-variant">{stat.metric}</span>
                 </div>
-                <div className="text-sm text-on-surface-variant leading-snug">{stat.label}</div>
               </div>
             ))}
           </div>
